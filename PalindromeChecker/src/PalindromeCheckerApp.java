@@ -1,21 +1,31 @@
-public class UseCase3PalindromeCheckerApp {
+public class UseCase4PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        String input = "level";
-        String reversed = "";
 
-        // reverse the string
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed = reversed + input.charAt(i);
+        String input = "radar";
+
+
+        char[] chars = input.toCharArray();
+
+
+        int start = 0;
+        int end = chars.length - 1;
+
+        boolean isPalindrome = true;
+
+        while (start < end) {
+
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
+            }
+
+            start++;
+            end--;
         }
 
-        // compare original and reversed
-        if (input.equals(reversed)) {
-            System.out.println(input + " is a Palindrome");
-        } else {
-            System.out.println(input + " is Not a Palindrome");
-        }
-
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome);
     }
 }
